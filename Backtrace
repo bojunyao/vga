@@ -1,0 +1,97 @@
+------------[ cut here ]------------
+kernel: WARNING: CPU: 0 PID: 419 at drivers/gpu/drm/drm_atomic_helper.c:1514 drm_atomic_helper_wait_for_vblanks.part.0+0x2a0/0x2b8
+kernel: [CRTC:33:crtc-0] vblank wait timed out
+kernel: CPU: 0 PID: 419 Comm: fbset Not tainted 5.15.5-0918d47 #1
+kernel: Hardware name: Generic DT based system
+kernel: Backtrace:
+kernel: [<807939e8>] (dump_backtrace) from [<80793be4>] (show_stack+0x20/0x24)
+kernel:  r7:000005ea r6:00000009 r5:804988cc r4:808f14b4
+kernel: [<80793bc4>] (show_stack) from [<8079c0c4>] (dump_stack+0x28/0x30)
+kernel: [<8079c09c>] (dump_stack) from [<80113a1c>] (__warn+0xe4/0x150)
+kernel:  r5:804988cc r4:809217ac
+kernel: [<80113938>] (__warn) from [<80794208>] (warn_slowpath_fmt+0xa0/0xe4)
+kernel:  r7:804988cc r6:000005ea r5:809217ac r4:809218c0
+kernel: [<8079416c>] (warn_slowpath_fmt) from [<804988cc>] (drm_atomic_helper_wait_for_vblanks.part.0+0x2a0/0x2b8)
+kernel:  r8:00000000 r7:00000001 r6:84b32900 r5:80cdf318 r4:00000000
+kernel: [<8049862c>] (drm_atomic_helper_wait_for_vblanks.part.0) from [<8049be98>] (drm_atomic_helper_commit_tail+0x88/0x98)
+kernel:  r10:852aa0dc r9:80cdf000 r8:00000000 r7:00000037 r6:623ebc88 r5:80cdf000
+kernel:  r4:84b32900
+kernel: [<8049be10>] (drm_atomic_helper_commit_tail) from [<8049c014>] (commit_tail+0x16c/0x190)
+kernel:  r5:00000000 r4:84b32900
+kernel: [<8049bea8>] (commit_tail) from [<8049c610>] (drm_atomic_helper_commit+0x13c/0x168)
+kernel:  r9:80cdf000 r8:80cdf5f0 r7:00000000 r6:80cdf000 r5:84b32900 r4:00000000
+kernel: [<8049c4d4>] (drm_atomic_helper_commit) from [<804bdbb4>] (drm_atomic_commit+0x50/0x60)
+kernel:  r7:00000001 r6:80cdf000 r5:84b32900 r4:00000000
+kernel: [<804bdb64>] (drm_atomic_commit) from [<804d5f44>] (drm_client_modeset_commit_atomic+0x208/0x24c)
+kernel:  r7:00000001 r6:00000001 r5:80cdf148 r4:84b32900
+kernel: [<804d5d3c>] (drm_client_modeset_commit_atomic) from [<804d6070>] (drm_client_modeset_commit_locked+0x6c/0x194)
+kernel:  r10:00000000 r9:00000003 r8:80d497a8 r7:80d49718 r6:80d49700 r5:80cdf000
+kernel:  r4:80cdf000
+kernel: [<804d6004>] (drm_client_modeset_commit_locked) from [<804d61cc>] (drm_client_modeset_commit+0x34/0x50)
+kernel:  r9:00000003 r8:80d497a8 r7:00000000 r6:80b6c308 r5:80cdf000 r4:80d49700
+kernel: [<804d6198>] (drm_client_modeset_commit) from [<804a4450>] (drm_fb_helper_set_par+0xbc/0x104)
+kernel:  r5:00000000 r4:80d49700
+kernel: [<804a4394>] (drm_fb_helper_set_par) from [<80447ad4>] (fb_set_var+0x184/0x34c)
+kernel:  r9:00000003 r8:808367c4 r7:853eac28 r6:853eac00 r5:00000000 r4:83ad5e3c
+kernel: [<80447950>] (fb_set_var) from [<80447e88>] (do_fb_ioctl+0x140/0x410)
+kernel:  r8:853eac10 r7:7f000000 r6:853eac00 r5:7ee80b44 r4:00000051
+kernel: [<80447d48>] (do_fb_ioctl) from [<804481a4>] (fb_ioctl+0x4c/0x5c)
+kernel:  r8:83ab5be0 r7:7ee80b44 r6:006ed2d0 r5:83ab5be0 r4:00004601
+kernel: [<80448158>] (fb_ioctl) from [<802adb74>] (sys_ioctl+0x268/0xbb0)
+kernel: [<802ad90c>] (sys_ioctl) from [<80100060>] (ret_fast_syscall+0x0/0x44)
+kernel: Exception stack(0x83ad5fa8 to 0x83ad5ff0)
+kernel: 5fa0:                   00501678 00000005 00000003 00004601 7ee80b44 00501678
+kernel: 5fc0: 00501678 00000005 006ed2d0 00000036 7ee80b3c 004fc814 00470102 00501630
+kernel: 5fe0: 0051cc6c 7ee80ae4 00467fd4 76e7a71c
+kernel:  r10:00000000 r9:83ad4000 r8:80100224 r7:00000036 r6:006ed2d0 r5:00000005
+kernel:  r4:00501678
+kernel: ---[ end trace 6c64dea05a41b1df ]---
+kernel: ------------[ cut here ]------------
+kernel: WARNING: CPU: 0 PID: 419 at drivers/gpu/drm/drm_atomic_helper.c:1514 drm_atomic_helper_wait_for_vblanks.part.0+0x2a0/0x2b8
+kernel: [CRTC:33:crtc-0] vblank wait timed out
+kernel: CPU: 0 PID: 419 Comm: fbset Tainted: G        W         5.15.5-0918d47 #1
+kernel: Hardware name: Generic DT based system
+kernel: Backtrace:
+kernel: [<807939e8>] (dump_backtrace) from [<80793be4>] (show_stack+0x20/0x24)
+kernel:  r7:000005ea r6:00000009 r5:804988cc r4:808f14b4
+kernel: [<80793bc4>] (show_stack) from [<8079c0c4>] (dump_stack+0x28/0x30)
+kernel: [<8079c09c>] (dump_stack) from [<80113a1c>] (__warn+0xe4/0x150)
+kernel:  r5:804988cc r4:809217ac
+kernel: [<80113938>] (__warn) from [<80794208>] (warn_slowpath_fmt+0xa0/0xe4)
+kernel:  r7:804988cc r6:000005ea r5:809217ac r4:809218c0
+kernel: [<8079416c>] (warn_slowpath_fmt) from [<804988cc>] (drm_atomic_helper_wait_for_vblanks.part.0+0x2a0/0x2b8)
+kernel:  r8:00000000 r7:00000001 r6:84b32900 r5:80cdf318 r4:00000000
+kernel: [<8049862c>] (drm_atomic_helper_wait_for_vblanks.part.0) from [<8049be98>] (drm_atomic_helper_commit_tail+0x88/0x98)
+kernel:  r10:852aa0dc r9:80cdf000 r8:00000000 r7:00000037 r6:68e5c324 r5:80cdf000
+kernel:  r4:84b32900
+kernel: [<8049be10>] (drm_atomic_helper_commit_tail) from [<8049c014>] (commit_tail+0x16c/0x190)
+kernel:  r5:00000000 r4:84b32900
+kernel: [<8049bea8>] (commit_tail) from [<8049c610>] (drm_atomic_helper_commit+0x13c/0x168)
+kernel:  r9:80cdf000 r8:80cdf5f0 r7:00000000 r6:80cdf000 r5:84b32900 r4:00000000
+kernel: [<8049c4d4>] (drm_atomic_helper_commit) from [<804bdbb4>] (drm_atomic_commit+0x50/0x60)
+kernel:  r7:00000001 r6:80cdf000 r5:84b32900 r4:00000000
+kernel: [<804bdb64>] (drm_atomic_commit) from [<804d5f44>] (drm_client_modeset_commit_atomic+0x208/0x24c)
+kernel:  r7:00000001 r6:00000001 r5:80cdf148 r4:84b32900
+kernel: [<804d5d3c>] (drm_client_modeset_commit_atomic) from [<804d6070>] (drm_client_modeset_commit_locked+0x6c/0x194)
+kernel:  r10:00000000 r9:853eac28 r8:80cdf000 r7:80d49718 r6:80d49700 r5:00000000
+kernel:  r4:80cdf000
+kernel: [<804d6004>] (drm_client_modeset_commit_locked) from [<804a3adc>] (drm_fb_helper_pan_display+0xe4/0x210)
+kernel:  r9:853eac28 r8:80cdf000 r7:80d497a8 r6:853eac00 r5:00000000 r4:80d49700
+kernel: [<804a39f8>] (drm_fb_helper_pan_display) from [<804478dc>] (fb_pan_display+0xa8/0x11c)
+kernel:  r10:00000000 r9:00000003 r8:00000258 r7:00000000 r6:00000000 r5:853eac28
+kernel:  r4:853eac00
+kernel: [<80447834>] (fb_pan_display) from [<80447ae8>] (fb_set_var+0x198/0x34c)
+kernel:  r9:00000003 r8:808367c4 r7:853eac28 r6:853eac00 r5:00000000 r4:00000000
+kernel: [<80447950>] (fb_set_var) from [<80447e88>] (do_fb_ioctl+0x140/0x410)
+kernel:  r8:853eac10 r7:7f000000 r6:853eac00 r5:7ee80b44 r4:00000051
+kernel: [<80447d48>] (do_fb_ioctl) from [<804481a4>] (fb_ioctl+0x4c/0x5c)
+kernel:  r8:83ab5be0 r7:7ee80b44 r6:006ed2d0 r5:83ab5be0 r4:00004601
+kernel: [<80448158>] (fb_ioctl) from [<802adb74>] (sys_ioctl+0x268/0xbb0)
+kernel: [<802ad90c>] (sys_ioctl) from [<80100060>] (ret_fast_syscall+0x0/0x44)
+kernel: Exception stack(0x83ad5fa8 to 0x83ad5ff0)
+kernel: 5fa0:                   00501678 00000005 00000003 00004601 7ee80b44 00501678
+kernel: 5fc0: 00501678 00000005 006ed2d0 00000036 7ee80b3c 004fc814 00470102 00501630
+kernel: 5fe0: 0051cc6c 7ee80ae4 00467fd4 76e7a71c
+kernel:  r10:00000000 r9:83ad4000 r8:80100224 r7:00000036 r6:006ed2d0 r5:00000005
+kernel:  r4:00501678
+kernel: ---[ end trace 6c64dea05a41b1e0 ]---
