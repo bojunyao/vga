@@ -1,3 +1,9 @@
+kernel: [drm:drm_crtc_commit_wait] *ERROR* flip_done timed out
+kernel: [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CRTC:33:crtc-0] commit wait timed out
+kernel: [drm:drm_crtc_commit_wait] *ERROR* flip_done timed out
+kernel: [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [CONNECTOR:31:Unknown-1] commit wait timed out
+kernel: [drm:drm_crtc_commit_wait] *ERROR* flip_done timed out
+kernel: [drm:drm_atomic_helper_wait_for_dependencies] *ERROR* [PLANE:32:plane-0] commit wait timed out
 ------------[ cut here ]------------
 kernel: WARNING: CPU: 0 PID: 419 at drivers/gpu/drm/drm_atomic_helper.c:1514 drm_atomic_helper_wait_for_vblanks.part.0+0x2a0/0x2b8
 kernel: [CRTC:33:crtc-0] vblank wait timed out
